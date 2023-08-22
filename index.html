@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     
+    <script>
+        /*
+            object incorporarting methods - exercise
+        */
+
+        let school = {
+            name: "French College",
+            town: "Paris",
+            students: [],
+            addStudent: function (name, surname) {
+                const stud = {
+                    name: name,
+                    surname: surname,
+                }
+                this.students[ this.students.length ] = stud;
+            },
+            showStudents: function () {
+                if (this.students.length == 0) {
+                    console.log("There are no students in school");
+                }
+                for ( let i = 0; i < this.students.length; i++ ) {
+                    console.log( this.students[i].name, this.students[i].surname);
+                }
+            },
+            showStudentsByName: function (name) {
+                for ( let i = 0; i < this.students.length; i++) {
+                    if ( this.students[i].name == name) {
+                        console.log( this.students[i].name, this.students[i].surname);
+                    }
+                }
+            },
+            getNumStudents: function () {
+                return this.students.length;
+            },
+            resetStudents () {
+                this.students = [];
+            }
+        }
+
+        console.log(school.getNumStudents());
+        school.showStudents();
+        school.addStudent("Mark", "Twain");
+        school.addStudent("Alan", "Gambit");
+        school.addStudent("Alan", "Zyskind");
+        school.addStudent("Dan", "Aykroyd");
+        school.addStudent("Mark", "Zuckerberg");
+        school.showStudents();
+        console.log("-----");
+        school.showStudentsByName("Mark");
+        console.log(school.getNumStudents());
+        school.resetStudents();
+        console.log(school.getNumStudents());
+
+</script>
+</body>
+</html>
