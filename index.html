@@ -12,7 +12,7 @@
             object incorporarting methods - exercise
         */
 
-        let school = {
+        const school = {
             name: "French College",
             town: "Paris",
             students: [],
@@ -26,12 +26,14 @@
             showStudents: function () {
                 if (this.students.length == 0) {
                     console.log("There are no students in school");
-                }
-                for ( let i = 0; i < this.students.length; i++ ) {
-                    console.log( this.students[i].name, this.students[i].surname);
+                } else {
+                    for ( let i = 0; i < this.students.length; i++ ) {
+                        console.log( this.students[i].name, this.students[i].surname);
+                    }
                 }
             },
             showStudentsByName: function (name) {
+                console.log("Students by name " + name + ":")
                 for ( let i = 0; i < this.students.length; i++) {
                     if ( this.students[i].name == name) {
                         console.log( this.students[i].name, this.students[i].surname);
